@@ -1,15 +1,16 @@
+import { useSelector } from "react-redux";
 import List from "../components/List";
+import InputArea from "../components/InputArea";
 
 const Home = () => {
+  const todos = useSelector((item) => item.todos);
+  console.log(todos);
+
   return (
     <div>
-      <form>
-        <input type="text" />
-        <input type="text" />
-        <button>추가하기</button>
-      </form>
-      <List />
-      <List />
+      <InputArea />
+      <List isActive={true} />
+      <List isActive={false} />
     </div>
   );
 };
